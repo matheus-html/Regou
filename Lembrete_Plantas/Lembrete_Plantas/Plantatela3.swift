@@ -6,15 +6,31 @@
 //
 
 import SwiftUI
-import SwiftData
 
 struct Plantatela3: View {
+    
+    @State private var pesquisa: String = ""
+    
     var body: some View {
-        VStack(spacing: 20){
+        
+        
+        
+        VStack(spacing: 20) {
             Text("Minhas plantas")
+                .font(.title)
             
-            Text("Pesquisar")
-                .background(Color.green)
+            TextField("Pesquisar", text: $pesquisa)
+                .textFieldStyle(.roundedBorder)
+                .padding()
+                .background(Color.green.opacity(0.2))
+                .cornerRadius(8)
         }
+        .padding()
+        
     }
+    
+    #Preview {
+        Plantatela2()
+    }
+    
 }
