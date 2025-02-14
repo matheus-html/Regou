@@ -29,12 +29,6 @@ struct Plantatela1: View {
                     .multilineTextAlignment(.center)
                     .padding(.horizontal) // Adiciona margem horizontal
                 
-                Text("Ao clicar em 'começar' você concorda com os nossos Termos de Uso.")
-                    .font(.footnote)
-                    .foregroundColor(.blue)
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal)
-                
                 NavigationLink(destination: Plantatela2()){
                     Text("Começar")
                         .padding()
