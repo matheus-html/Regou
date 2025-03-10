@@ -7,27 +7,43 @@
 
 import SwiftUI
 import SwiftData
-import Foundation
 
-struct LembretePlanta: Identifiable {
+
+@Model
+class LembretePlanta: Identifiable {
     var id = UUID()
     var nome = String()
     var hora = Date()
     var especie = String()
+    
+    
+    init(nome: String, hora: Date, especie: String){
+        self.nome = nome
+        self.hora = hora
+        self.especie = especie
+    }
 }
-
 struct Plantatela2: View {
+    @Environment(\.modelContext) private var context
     @State private var nome: String = ""
     @State private var hora: Date = Date()
     @State private var especie: String = ""
-    @State private var plantas: [LembretePlanta] = []
+    @Query private var plantas: [LembretePlanta]
 
     var body: some View {
         NavigationStack {
             VStack(spacing: 20) {
-                Text("Cadastre sua planta")
-                    .font(.title)
-                    .padding(.horizontal)
+                HStack{
+                    Text("Cadastre\nsua planta")
+                        .font(.title)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    
+                    Image("novo-icone")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width:50, height: 50)
+                        .padding(.leading)
+                }
 
                 VStack(alignment: .leading, spacing: 10) {
                     Text("Nome da planta").font(.headline)
@@ -51,7 +67,8 @@ struct Plantatela2: View {
 
                 Button("Cadastrar planta") {
                     let novaPlanta = LembretePlanta(nome: nome, hora: hora, especie: especie)
-                    plantas.append(novaPlanta)
+                   // plantas.append(novaPlanta)
+                    context.insert(novaPlanta)
 
                     // Limpa os campos após cadastrar
                     nome = ""

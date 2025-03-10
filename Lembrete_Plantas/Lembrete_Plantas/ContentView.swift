@@ -18,7 +18,7 @@ struct Plantatela1: View {
         NavigationStack{
             VStack(spacing: 20) { // Espaçamento vertical entre os elementos
                 
-                Image("icone")
+                Image("novo-icone.png")
                     .imageScale(.large)
                     .foregroundStyle(.tint)
                 

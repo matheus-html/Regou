@@ -13,6 +13,7 @@ struct Lembrete_PlantasApp: App {
     var body: some Scene {
         WindowGroup {
             Plantatela1()
+                .modelContainer(for:[LembretePlanta.self])
         }
     }
 }
