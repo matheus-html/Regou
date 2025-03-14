@@ -4,7 +4,7 @@
 //
 //  Created by iredefbmac_32 on 10/01/25.
 //
-//  ContentView.swift
+//  ContentView.swift	
 //  Lembrete_Plantas
 //
 //  Created by iredefbmac_32 on 10/01/25.
@@ -16,18 +16,18 @@ import SwiftUI
 struct Plantatela1: View {
     var body: some View {
         NavigationStack{
-            VStack(spacing: 20) { // Espaçamento vertical entre os elementos
+            VStack(spacing: 20) {
                 
-                Image("novo-icone.png")
+                Image("planta")
                     .imageScale(.large)
                     .foregroundStyle(.tint)
                 
-                Spacer() // Adiciona espaço no topo para centralizar o conteúdo
+                Spacer()
                 
                 Text("Bem vindo ao lembrete de cuidado das plantas")
-                    .font(.title) // Tamanho de texto maior
+                    .font(.title)
                     .multilineTextAlignment(.center)
-                    .padding(.horizontal) // Adiciona margem horizontal
+                    .padding(.horizontal)
                 
                 NavigationLink(destination: Plantatela2()){
                     Text("Começar")
