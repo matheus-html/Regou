@@ -38,7 +38,7 @@ struct Plantatela2: View {
                         .font(.title)
                         .frame(maxWidth: .infinity, alignment: .leading)
                     
-                    Image("novo-icone")
+                    Image("planta")
                         .resizable()
                         .scaledToFit()
                         .frame(width:50, height: 50)
